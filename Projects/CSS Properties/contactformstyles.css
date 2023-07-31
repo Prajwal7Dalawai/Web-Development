@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(236, 241, 150, 0.851);
+    margin: 20px 300px;
+}
+.sub{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(2, 11, 19, 0.959);
+    font-weight: 200;
+    font-size: 150%;
+}
+h1{
+    text-align: center;
+    color: rgba(236, 16, 192, 0.999);
+    font-family:'OSWALD', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 711;
+    font-size: 300%;
+}
+div{
+    background-color:antiquewhite;
+    text-align: center;
+    border:  SOLID greenyellow;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 150%;
+    padding: 20px;
+    text-align: left;
+}
+textarea{
+    width: 100%;
+    padding: 5px;
+    border: 3px solid brown;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    
+}
+input[type="text"]
+{
+    width: 100%;
+    padding: 5px;
+    border: 3px solid brown;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+input[type="email"]
+{
+    width: 100%;
+    padding: 5px;
+    border: 3px solid brown;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+input[type="date"]
+    {
+        width: 100%;
+        padding: 5px;
+        border: 3px solid brown;
+        border-radius: 5px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 25px;
+    }
+input[type="number"]{
+    width: 100%;
+    padding: 5px;
+    border: 3px solid brown;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+div:hover{
+    background-color: azure;
+}
+input[type="submit"]{
+    padding: 5px;
+    text-align: center;
+    border: 2px solid salmon;
+    width: 100%;
+    background-color: rgb(14, 123, 232);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: medium;
+    font-weight: 200;
+}
+input[type="submit"]:hover{
+    background-color: aquamarine;
+}
+aside {
+    width: 40%;
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+    float: right;
+    box-shadow: inset 5px 0 5px -5px #29627e;
+    font-style: italic;
+    color: #29627e;
+}
+
+aside > p {
+    margin: 0.5rem;
+}
