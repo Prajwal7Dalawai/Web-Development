@@ -1,0 +1,113 @@
+.container{
+    box-sizing: border-box;
+   /* border: 3px solid black;*/
+    margin: 10px 100px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:center;
+    align-content:space-between;
+    background-color:aliceblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+#box-1{
+    background-color:rgba(196, 182, 164, 0.997);
+    border: 3px solid black;
+    width: 300px;
+    height: 600px;
+    margin: 20px;
+    overflow: scroll;
+    padding: 10px;
+}
+#box-2{
+    background-color:rgba(196, 182, 164, 0.997);
+    border: 3px solid black;
+    width: 300px;
+    height: 600px;
+    margin: 20px;
+    overflow: scroll;
+    padding: 10px;
+}
+#box-3{
+    background-color:rgba(196, 182, 164, 0.997);
+    border: 3px solid black;
+    width: 300px;
+    height: 600px;
+    margin: 20px;
+    padding: 10px;
+    overflow: scroll;
+}
+#box-4{
+    background-color:rgba(196, 182, 164, 0.997);
+    border: 3px solid black;
+    width: 300px;
+    height: 600px;
+    margin: 20px;
+    padding: 10px;
+    overflow: scroll;
+}
+#box-5{
+    background-color:rgba(196, 182, 164, 0.997);
+    border: 3px solid black;
+    width: 300px;
+    height: 600px;
+    margin: 20px;
+    padding: 10px;
+    overflow: scroll;
+}
+#box-6{
+    background-color:rgba(196, 182, 164, 0.997);
+    border: 3px solid black;
+    width: 300px;
+    height: 600px;
+    margin: 20px;
+    padding: 10px;
+    overflow: scroll;
+}
+#box-1:hover{
+    zoom: 110%;
+}
+#box-2:hover{
+    zoom: 110%;   
+}
+#box-3:hover{
+    zoom: 110%;   
+}
+#box-4:hover{
+    zoom: 110%;   
+}
+#box-5:hover{
+    zoom: 110%;   
+}
+#box-6:hover{
+    zoom: 110%;   
+}
+#h1{
+    font-family: 'Montserrat';
+    color:aliceblue;
+}
+#main{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(132, 5, 17);
+}
+#h2{
+    color:rgba(205, 32, 173, 0.662);
+    text-align: center;
+    font-size: 200%;
+    font-family: 'Maven Pro';
+}
+#h3{
+    font-family: 'IBM Plex Sans';
+    color: rgba(195, 68, 4, 0.922);
+}
+#h4{
+    font-family: 'Playfair Display';
+    font-style:oblique;
+    color: rgba(201, 74, 6, 0.853);
+}
+#h5{
+    color: azure;
+}
+#h6{
+    font-family: 'Libre Baskerville';
+    color: rgba(114, 78, 4, 0.964);
+}
