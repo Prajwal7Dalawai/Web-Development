@@ -3,7 +3,7 @@
 }
 body{
     background-color: rgba(236, 241, 150, 0.851);
-    margin: 20px 300px;v
+    margin: 20px 300px;
 }
 .sub{
     text-align: center;
@@ -87,4 +87,17 @@ input[type="submit"]{
 }
 input[type="submit"]:hover{
     background-color: aquamarine;
+}
+aside {
+    width: 40%;
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+    float: right;
+    box-shadow: inset 5px 0 5px -5px #29627e;
+    font-style: italic;
+    color: #29627e;
+}
+
+aside > p {
+    margin: 0.5rem;
 }

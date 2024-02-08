@@ -9,7 +9,7 @@ body{
     display: flex; 
     justify-content: center;
     align-items: center; 
-    background-image: url('../../Images/Background\ image.jpeg'); 
+    background-image: url('Images/Background\ image.jpeg'); 
 }
 .cards{
     box-sizing: content-box;
