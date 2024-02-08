@@ -1,0 +1,72 @@
+body{
+    margin: 5px;
+}
+.container{
+    box-sizing: border-box;
+    height: 730px;
+    width: 100%;
+    border: 2px solid black;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    background-image: url('../../Images/Background\ image.jpeg'); 
+}
+.cards{
+    box-sizing: content-box;
+    height: 350px;
+    margin: 15px;                                    
+    width: 20%;
+    border: 4px solid rgb(72, 162, 207);
+    border-radius: 10px;
+    background-color: rgb(93, 93, 93);
+}
+h3{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    font-size:medium;
+    font-size: 1.02;
+    text-align: center;
+    color:azure;
+    height: 40px;
+    width: 100px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin-left: 90px;
+    background-color: rgb(232, 141, 102);
+}
+ol{
+    line-height: 2;
+    font-size: 110%;
+}
+.select{
+    text-align: center;
+    box-sizing: content-box;
+    height: 30px;
+    width: 100px;
+    padding: 5px;
+    margin-left: 90px;
+    font-size: 150%;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-size: 15 0%;
+    background-color: aqua;
+    color:rgb(226, 45, 63);
+    cursor: pointer;
+}
+#c3:hover{
+    zoom: 1.02;
+    border-radius: 10px 20px;
+}
+#c4:hover{
+    zoom: 1.02;
+    border-radius: 10px 20px;
+}
+#c2:hover{
+    zoom: 1.02;
+    border-radius: 10px 20px;
+}
+#c1:hover{
+    zoom: 1.03;
+    border-radius: 10px 20px;
+}
