@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>          
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,12 +7,15 @@
     <style>
         div{
             height: 200px;
-            width: 200px;
-            background-color: rgb(85, 85, 217);
-            transition: 1s;
+            width: 200px;             /* TRansition shorthand properties: property name|duration|timing function|delay*/
+            background-color: rgb(85, 85, 217);   /* example: transition margin top 2s ease-in-out 0.2s;*/
+            margin: 0px auto;
+            margin-top: 10px;
+           transition: margin-top 2s ease-in-out 0.2s;
         }
         div:hover{
-            background-color: blanchedalmond;
+            margin-top: 400px;
+            background-color:rgb(229, 58, 58);
         }
     </style>
 </head>
