@@ -4,9 +4,13 @@ body{
     margin-right: 0px;
 }
 nav{
-    background-color: rgba(238, 60, 60, 0.658);
+    background-color: rgba(239, 22, 22, 0.952);
     padding: 5px;
     height: 60px;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    border-radius: 0px 0px 20px 20px;
 }
 #back{
     text-decoration: none;
@@ -16,7 +20,6 @@ nav{
     margin-right: 100px;
 }
 .back{
-    float: left;
     margin-top: 10px;
     margin-left: 20px ;
 }
@@ -24,18 +27,65 @@ nav{
     height: 60px;
     margin-right: 50px;
 }
-.logo{
-    float:left;
+.Slogo{
     margin-right: 50px;
 }
-#search{
-   margin-top: 10px;
-   font-size: 150%;
-   margin-left: 50px;
-   float: left;
+.search{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 130%;
+    font-family: 'Roboto';
+    font-weight: 200;
 }
-#Sbox{
-    height: 30px;
-    width: 200px;
-    background-color: aqua;
+
+textarea { 
+        
+        width: 500px;
+        height: 30px;
+        background-color: rgba(245, 245, 220, 0.615);
+        margin-top: 10px;
+        margin-left: 15px;
+        border-radius: 30px;
+        padding-left: 40px;
+        padding-top: 13px;
+         font-size: 120%;
+         text-align:left;
 }
+.login{
+    margin-left: 200px;
+    margin-top: 30px;
+    font-size: 110%;
+}
+.signup{
+    margin-left: 100px;
+    margin-top: 30px;
+    font-size: 110%;
+}
+.container{
+    display: flex;
+    height: 700px;
+}
+#side{
+    width: 20%;
+    padding-top: 20px;
+    background-color: aliceblue;
+    display: inline-block;
+}
+#profile{
+    display: inline-block;
+    margin-left: 5px;
+    margin-bottom: 60px;
+    text-align: justify;
+}
+
+#content{
+    background-color: aquamarine;
+    width: 60%;
+}   
+#ads{
+    width: 20%;
+}
+li{
+    padding: 10px;
+}
+
