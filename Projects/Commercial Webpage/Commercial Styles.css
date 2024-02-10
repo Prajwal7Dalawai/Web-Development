@@ -52,13 +52,16 @@ textarea {
          text-align:left;
 }
 .login{
-    margin-left: 200px;
+    margin-left: 120px;
     margin-top: 30px;
     font-size: 110%;
 }
 .signup{
-    margin-left: 100px;
+    margin-left: 80px;
     margin-top: 30px;
+    font-size: 100%;
+}
+.signup a{
     font-size: 110%;
 }
 .container{
