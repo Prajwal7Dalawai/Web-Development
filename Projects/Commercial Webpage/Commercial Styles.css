@@ -1,8 +1,41 @@
 body{
     margin-top: 0px;
     margin-left: 0px;
+    margin-right: 0px;
 }
 nav{
     background-color: rgba(238, 60, 60, 0.658);
     padding: 5px;
+    height: 60px;
+}
+#back{
+    text-decoration: none;
+    text-align: center;
+    font-size: 200%;
+    margin-bottom: 20px;
+    margin-right: 100px;
+}
+.back{
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px ;
+}
+#logo{
+    height: 60px;
+    margin-right: 50px;
+}
+.logo{
+    float:left;
+    margin-right: 50px;
+}
+#search{
+   margin-top: 10px;
+   font-size: 150%;
+   margin-left: 50px;
+   float: left;
+}
+#Sbox{
+    height: 30px;
+    width: 200px;
+    background-color: aqua;
 }
