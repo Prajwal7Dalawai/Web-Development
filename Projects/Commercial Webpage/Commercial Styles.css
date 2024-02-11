@@ -11,6 +11,7 @@ nav{
     justify-content: left;
     align-items: flex-start;
     border-radius: 0px 0px 20px 20px;
+    margin-bottom: 10px;
 }
 #back{
     text-decoration: none;
@@ -36,6 +37,7 @@ nav{
     font-size: 130%;
     font-family: 'Roboto';
     font-weight: 200;
+    overflow:visible;
 }
 
 textarea { 
@@ -66,7 +68,7 @@ textarea {
 }
 .container{
     display: flex;
-    height: 700px;
+    height: 650px;
 }
 #side{
     width: 20%;
@@ -90,5 +92,8 @@ textarea {
 }
 li{
     padding: 10px;
+}
+li a{
+    text-decoration: none;
 }
 
