@@ -2,41 +2,49 @@ body{
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
+  
+}
+.background{
+    background-image: url("https://th.bing.com/th/id/OIP.hqfJdBBARTcW4LkgU7lVzQHaEc?w=319&h=191&c=7&r=0&o=5&dpr=1.3&pid=1.7");
+    background-repeat:no-repeat;
+    height: 800px;
+    width: 100%;
+    background-size: 100% 100%;
 }
 nav{
-    background-color: rgba(239, 22, 22, 0.952);
+    background-color: rgba(237, 235, 235, 0.418);
     padding: 5px;
-    height: 60px;
+    height: 80px;
     display: flex;
     justify-content: left;
     align-items: flex-start;
     border-radius: 0px 0px 20px 20px;
-    margin-bottom: 10px;
 }
 #back{
     text-decoration: none;
     text-align: center;
     font-size: 200%;
     margin-bottom: 20px;
-    margin-right: 100px;
+    margin-right: 50px;
 }
 .back{
     margin-top: 10px;
+    font-weight: 800;
     margin-left: 20px ;
 }
 #logo{
-    height: 60px;
-    margin-right: 50px;
+    height: 80px;
+    margin-right: 20px;
 }
-.Slogo{
-    margin-right: 50px;
+.Slogo{ 
+    margin-right: 10px;
 }
 .search{
     text-align: center;
     margin-top: 20px;
     font-size: 130%;
     font-family: 'Roboto';
-    font-weight: 200;
+    font-weight: 500;
     overflow:visible;
 }
 
@@ -44,9 +52,9 @@ textarea {
         
         width: 500px;
         height: 30px;
-        background-color: rgba(245, 245, 220, 0.615);
+        background-color: rgba(245, 245, 220, 0.148);
         margin-top: 10px;
-        margin-left: 15px;
+        margin-left: 5px;
         border-radius: 30px;
         padding-left: 40px;
         padding-top: 13px;
@@ -54,46 +62,80 @@ textarea {
          text-align:left;
 }
 .login{
-    margin-left: 120px;
-    margin-top: 30px;
-    font-size: 110%;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 150%;
+    font-weight: 700;
 }
 .signup{
-    margin-left: 80px;
-    margin-top: 30px;
-    font-size: 100%;
+    margin-left: 30px;
+    margin-top: 25px;
+    font-size: 110%;
+    font-weight: 600;
 }
 .signup a{
     font-size: 110%;
+    font-weight: 800;
 }
 .container{
     display: flex;
-    height: 650px;
+    height: 700px;
 }
 #side{
     width: 20%;
     padding-top: 20px;
-    background-color: aliceblue;
+    background-color: rgba(240, 248, 255, 0.396);
     display: inline-block;
+    border-right: 2px dotted salmon;
 }
 #profile{
-    display: inline-block;
-    margin-left: 5px;
+    margin-left: 10px;
+    flex-direction: column;
+    align-content:baseline;
+    text-align: justify;
     margin-bottom: 60px;
     text-align: justify;
 }
-
-#content{
-    background-color: aquamarine;
-    width: 60%;
-}   
-#ads{
-    width: 20%;
+.profile{
+    margin-left: 30px;
+    display: flex;
 }
+.profile img{
+border-radius: 50%;
+width: 80px;
+height: 80px;
+}
+
 li{
     padding: 10px;
 }
 li a{
     text-decoration: none;
+    font-weight: 700;
 }
 
+#content{
+    background-color: rgba(240, 248, 255, 0.396);
+    width: 60%;
+    padding: 10px;
+    border-right: 2px dotted salmon;
+}
+.History{
+    margin-left: 20px;
+    text-align: justify;
+    box-sizing: content-box;
+} 
+.Performance{
+    text-align: justify;
+    margin-left: 20px;
+    box-sizing: content-box;
+}
+  
+#Ads{
+    background-color:rgba(240, 248, 255, 0.396) ;
+     width: 20%;
+ }
+ .Achievements{
+    margin-left: 20px;
+    box-sizing: content-box;
+ }
