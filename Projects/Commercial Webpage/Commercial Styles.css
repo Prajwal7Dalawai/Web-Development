@@ -7,7 +7,7 @@ body{
 .background{
     background-image: url("https://th.bing.com/th/id/OIP.hqfJdBBARTcW4LkgU7lVzQHaEc?w=319&h=191&c=7&r=0&o=5&dpr=1.3&pid=1.7");
     background-repeat:no-repeat;
-    height: 810px;
+    height: 850px;
     width: 100%;
     background-size: 100% 100%;
 }
@@ -41,23 +41,40 @@ nav{
 .Slogo{ 
     margin-right: 10px;
 }
+.sengine{
+    display: grid;
+    grid-template-columns: 2;
+}
+.text{
+    grid-column-start: 1;
+}
+.button{
+    grid-column-start: 2;
+    margin-top: 10px;
+}
 .search{
     text-align: center;
     margin-top: 20px;
     font-size: 130%;
-    font-family: 'Roboto';
     font-weight: 500;
     overflow:visible;
 }
-
+nav button{
+    height: 45px;
+    width: 80px;
+        background-color:rgba(245, 245, 220, 0.438);
+        border-radius: 0px 30px 30px 0px;
+        border: 2px;
+}
 textarea { 
         
-        width: 500px;
+        width: 350px;
         height: 30px;
-        background-color: rgba(245, 245, 220, 0.148);
+        border: 0px;
+        background-color: rgba(245, 245, 220, 0.278);
         margin-top: 10px;
         margin-left: 5px;
-        border-radius: 30px;
+        border-radius: 30px 0px 0px 30px;
         padding-left: 40px;
         padding-top: 13px;
          font-size: 120%;
@@ -82,11 +99,13 @@ textarea {
 .container{
     display: flex;
     height: 700px;
+    background-color: rgba(28, 27, 27, 0.418);
+    color: white;
 }
 #side{
     width: 20%;
     padding-top: 20px;
-    background-color: rgba(240, 248, 255, 0.396);
+    /*background-color: rgba(240, 248, 255, 0.396);*/
     display: inline-block;
     border-right: 2px dotted salmon;
 }
@@ -101,6 +120,9 @@ textarea {
 .profile{
     margin-left: 30px;
     display: flex;
+    color: yellow;
+    font-family: 'Montserrat';
+    font-weight: 800;
 }
 .profile img{
 border-radius: 50%;
@@ -114,33 +136,47 @@ li{
 li a{
     text-decoration: none;
     font-weight: 700;
+    color: yellow;
+    font-family: 'Montserrat';
+    font-size: 120%;
 }
 
 #content{
-    background-color: rgba(240, 248, 255, 0.396);
+   /* background-color: rgba(240, 248, 255, 0.396);*/
     width: 60%;
     padding: 10px;
     border-right: 2px dotted salmon;
+    font-size: 100%;
+    font-weight: 800;
+    font-family: 'Raleway'
 }
 .History{
     margin-left: 20px;
     text-align: justify;
     box-sizing: content-box;
+}
+.History h1{
+    font-size: 150%;
+    text-decoration: underline;
 } 
 .Performance{
     text-align: justify;
     margin-left: 20px;
     box-sizing: content-box;
 }
-  
+.Performance h1{
+    font-size: 150%;
+    text-decoration: underline;
+} 
 #Ads{
-    background-color:rgba(240, 248, 255, 0.396) ;
+  /*  background-color:rgba(240, 248, 255, 0.396) ;*/
      width: 20%;
      height: 720px;
  }
  .Achievements{
     margin-left: 10px;
     box-sizing: content-box;
+    font-family: 'Oswald';
  }
  .fcontain{
     /*height: 500px;*/
@@ -154,16 +190,16 @@ li a{
     width: 100%;
     background-image: url("Images/sdm.jpeg");
     background-repeat: no-repeat;
+    font-family: 'Roboto';
     background-size: 100% 100%;
  }
- #quick_links1{
+ #quick_links{
     color: rgb(248, 250, 251);
     grid-column-start: 1;
-    float: left;
     padding: 5px;
-    width: 30%;
-    border-right: 3px dotted white;
-    float: left;
+ }
+ #quick_links h2{
+    text-decoration: underline;
  }
 footer a{
     color: white;
@@ -173,14 +209,27 @@ footer a{
     color: rgb(248, 250, 251);
     float: left;
     padding: 5px;
-    /*border-right: 3px dotted white;*/
     float: left;
+ }
+ #quick_links2 h2{
+    text-decoration: underline;
  }
  #useful_links{
     grid-column-start: 3;
     color: rgb(248, 250, 251);
     float: left;
     padding: 5px;
-    /*border-right: 3px dotted white;*/
+ }
+ #useful_links h2{
+    text-decoration: underline;
+ }
+ #contact_us{
+    grid-column-start: 4;
+    color: rgb(248, 250, 251);
     float: left;
+    padding: 5px;
+   
+ }
+ #contact_us h1{
+    text-decoration: underline;
  }
