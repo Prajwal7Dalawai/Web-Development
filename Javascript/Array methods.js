@@ -21,3 +21,13 @@ console.log(array.indexOf(10));
 //includes() --> Returns if the array contained the element mentioned or not.
 console.log(array.includes(5));
 console.log(array.includes(10));
+
+/*slice(starting_index,ending_index) --> Gives the specified part of the array.
+array.slice()*--> Returns full copy of the array.
+array.slice(starting_index) --> Returns the complete array starting from the specifies index
+array.slice()
+*/
+console.log(array.slice(2));
+console.log(array.slice());
+console.log(array.slice(2,3));
+console.log(array.slice(-2));
