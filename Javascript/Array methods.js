@@ -31,3 +31,20 @@ console.log(array.slice(2));
 console.log(array.slice());
 console.log(array.slice(2,3));
 console.log(array.slice(-2));
+
+/* Splice Method: Removes/replaces/add elements in place.
+splice(start,deleteCount,item0....itemN)
+array.splice(start)--> Print only the elements from that point.
+array.splice(start,end)-->Returns the elements between these two points.
+array.splice() --> Deletes everything
+*/
+console.log(array.splice(3));
+console.log(array.splice(0,3));
+console.log(array.splice());
+console.log(array.splice(1,1,8));
+console.log(array.shift());
+console.log(array.splice(3));
+console.log(array);
+array=[1,2,3,4,5];
+console.log(array.splice(0,1,8,9,10));
+console.log(array);
