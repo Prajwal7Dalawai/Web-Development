@@ -48,3 +48,6 @@ console.log(array);
 array=[1,2,3,4,5];
 console.log(array.splice(0,1,8,9,10));
 console.log(array);
+
+//Sort method in array   array.sort()--> ascending sort The maximum element will be at first, and then the sorted elements
+console.log("Sorted array is ", array.sort());
