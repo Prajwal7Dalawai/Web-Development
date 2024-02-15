@@ -20,3 +20,11 @@ let cars=["Lambhorgini","Bugati","Ferrari","Mecedes","Audi","BMW"];
 console.log("Cars:")
 for(car of cars)   // in for of loop, the iterating variable access each elements in an array and used in performing required operations
 console.log(car);
+
+//Nested for of loop
+console.log("Heros:")
+for(list of heros)
+{
+    for(hero of list)
+    console.log(hero)
+}
