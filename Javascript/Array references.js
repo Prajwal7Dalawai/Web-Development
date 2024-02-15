@@ -7,3 +7,4 @@ newarray=array1;
 //array1===newarray ==> True
 //[==]-> compares two values
 //[===]-> compare two data types
+//Assignment to constant variable not possible in JS
