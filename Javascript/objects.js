@@ -16,4 +16,7 @@ const post = {
     reposts: 2,
     tags: ["@apnacollege","@delta"],
 }
-console.log(post);
+console.log(post.name1);
+console.log(typeof post);
+if((typeof post) == "object")
+console.log("yes");
