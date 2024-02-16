@@ -11,3 +11,5 @@ for(var key of library)
     if(key.genre=="Fiction")
     console.log(key.title);
 }
+library[1].title="Rich Dad poor Dad";
+console.log(library[1]);
