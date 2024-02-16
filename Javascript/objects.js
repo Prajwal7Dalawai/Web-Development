@@ -16,4 +16,4 @@ const post = {
     reposts: 2,
     tags: ["@apnacollege","@delta"],
 }
-console.log(post)
+console.log(post);
