@@ -15,8 +15,20 @@ const post = {
     likes: 500,
     reposts: 2,
     tags: ["@apnacollege","@delta"],
+    city: "Hubballi"
 }
 console.log(post.name1);
 console.log(typeof post);
 if((typeof post) == "object")
 console.log("yes");
+
+//Adding or updating values
+post.city = "Banglore";
+console.log(post);
+//Creating a new key:
+post.device = "Andriod";
+console.log(post);
+
+//Deleting key:
+delete post.device;
+console.log(post);
