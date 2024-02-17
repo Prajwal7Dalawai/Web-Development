@@ -9,3 +9,9 @@ let Student={
 };
 const data={...Student, marks:90.5};
 console.log(data);
+
+function nothing(...arr1){
+    for(let i=1;i<=arr1.length;i++)
+    console.log("You gave : ",i);
+}
+nothing(...arr2);
