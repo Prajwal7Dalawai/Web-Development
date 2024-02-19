@@ -5,7 +5,9 @@ body {
 #mainImg {
   width: 35%;
 }
-
+.p{
+  color: red;
+}
 .box {
   border: 0.25px solid black;
   background-color: lightgray;
