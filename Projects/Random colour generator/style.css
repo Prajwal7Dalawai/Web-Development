@@ -1,0 +1,21 @@
+div{
+    background-color: white;
+    height: 200px;
+    width: 700px;
+    font-size: 200%;
+    font-weight: 700;
+    border: 1px solid black;
+    margin: 0px auto;
+    padding-top: 120px;
+    /*color: rgb(255, 126, 80);*/
+}
+body{
+    text-align: center;
+    /*background-color: rgba(193, 149, 233, 0.873);*/
+}
+button{
+    height: 60px;
+    width: 120px;
+    font-size: 130%;
+    font-weight: 400;
+}
