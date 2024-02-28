@@ -1,0 +1,24 @@
+h1{
+    text-align: center ;
+}
+.main{
+    display: flex;
+    border: 2px solid black;
+    /*height: 100px;
+    width: 100px;*/
+}
+.task{
+    border: 2px solid black;
+    padding: 20px;
+    margin: 0 auto;
+}
+#submit{
+    background-color: rgb(13, 13, 241);
+    border-radius: 0;
+    color: white;
+}
+#1{
+    padding: 40px;
+    border: 2px solid ;
+}
+
