@@ -26,6 +26,7 @@ h1{
 }
 h2{
     padding-left: 20px;
+    text-align:left;    
 }
 th {
    padding-right: 120px;
@@ -34,4 +35,10 @@ table{
     margin-left: 20px;
     border: 2px solid black;
     border-collapse: collapse;
+}
+#title{
+    width: 230px; 
+}
+#submit{
+    width: 240px;
 }
