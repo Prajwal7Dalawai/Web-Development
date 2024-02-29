@@ -14,16 +14,30 @@
                 <h3>Enter the task details</h3>
                 <div class="task">
                    <form action="">
-                    <input type="text" style="width: 230px;" id="title" placeholder="title"><br><br>Description: <br>
-                    <textarea name="" id="desc" cols="30" rows="10"></textarea><br><br>
+                    <label for="title"><input type="text" style="width: 230px; display: flex; flex-wrap: wrap;" id="title" placeholder="title"></label><br><br>Description: <br>
+                   <label for="desc"> <textarea name="" id="desc" cols="30" rows="10" style="display: flex;  flex-wrap: wrap;" placeholder="Description of the task"></textarea></label><br><br>
                     <button style="width: 240px;" id="submit" type="submit">Save</button>
                    </form> 
                 </div>
             </div>
         </div>
         <div class="class" id="2">
-            <h2>Pending Tasks</h2>
+            <h2 style="text-align:left;">Pending Tasks</h2><hr>
+            <table>
+                <thead>
+                    <tr>
+                        <th><b>Title</b></th>
+                        <th><b>Description</b></th>
+                        <th><b>Completed</b></th>
+                        <th><b>Delete</b></th>
+                    </tr>
+                </thead>
+            </table>
+            <h2 class="comp">Completed Tasks</h2>
+            <ul class="completed">
+            </ul>
         </div>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>

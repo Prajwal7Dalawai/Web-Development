@@ -156,6 +156,7 @@ li a{
     margin-left: 20px;
     text-align: justify;
     box-sizing: content-box;
+    overflow:scroll;
 }
 .History h1{
     font-size: 150%;
