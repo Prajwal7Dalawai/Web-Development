@@ -5,18 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do Application</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Khojki:wght@400..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Annapurna+SIL:wght@400;700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Khojki:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1 id="heading">To-Do list Application</h1>
     <div class="main">
         <div class="class" id="1">
             <div class="sub1">
-                <h3>Enter the task details</h3>
+                <h3 id="Enter">Enter the task details</h3>
                 <div class="task">
                    <form action="">
-                    <label for="title"><input type="text"  id="title" placeholder="title"></label><br><br>Description: <br>
+                    <label for="title"><input type="text"  id="title" placeholder="Name of the task"></label><br><br> <br>
                    <label for="desc"> <textarea name="" id="desc" cols="30" rows="10"  placeholder="Description of the task"></textarea></label><br><br>
-                    <button id="submit" type="submit">Save</button>
+                    <button id="submit" type="submit">Save</button><br>
+                    <button id="reset" type="reset">Reset</button>
                    </form> 
                 </div>
             </div>
@@ -29,7 +39,7 @@
                         <th><b>Title</b></th>
                         <th><b>Description</b></th>
                         <th><b>Completed</b></th>
-                        <th><b>Delete</b></th>
+                        <th id="4th"><b>Delete</b></th>
                     </tr>
                 </thead>
             </table>

@@ -1,44 +1,106 @@
+body{
+    margin-top: 0px;
+    background-image: url('resources/OIP.jpeg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+}
+
 h1{
     text-align: center ;
+    font-family: 'Exo 2';
+    font-size: 250%;
+    font-weight: 900;
 }
 .main{
     display: flex;
-    border: 2px solid black;
+    border: 2px solid white;
     /*height: 100px;
     width: 100px;*/
 }
+#Enter{
+    font-family: 'Noto Serif Khojki';
+    font-size: 150%;
+}
 .task{
-    border: 2px solid black;
+    border: 2px solid white;
     padding: 20px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    min-width: 100px;
 }
 #submit{
-    background-color: rgb(13, 13, 241);
+    background-color: rgb(21, 21, 247);
     border-radius: 0;
     color: white;
-   
+    width: 320px;
 }
 .sub1{
     padding: 40px; 
-    border-right:2px solid black ; 
+    border-right:2px solid white ; 
 }
 h2{
     padding-left: 20px;
-    text-align:left;    
+    text-align:center;    
 }
 th {
-   padding-right: 120px;
+   padding-right: 140px;
+   font-family: 'Times New Roman';
+   color: aqua;
+   padding-left: 10px;
+   padding-top: 10px;
 }
+
 table{
     margin-left: 20px;
-    border: 2px solid black;
+    border: 2px solid white;
+    margin-top: 20px;
     border-collapse: collapse;
+    font-size: 130%;
+    text-align: justify;
+}
+td{
+    padding-left: 10px;
 }
 #title{
-    width: 230px; 
+    width: 300px;
+    font-family: 'Annapurna SIL';
+    font-weight: 500;
+    font-weight: bold;
+    font-size: 120%;
+    padding-left: 10px;
+    min-width: 100px;
 }
-#submit{
-    width: 240px;
+#reset{
+    margin-top: 10px;
+    width: 320px;
+    background-color: rgb(5, 19, 221);
+    color: white;
+}
+#desc{
+    font-family: 'Annapurna SIL';
+    font-size: 130%;
+    padding-left: 10px;
+    padding-top: 5px;
+    min-width: 100px;
+}
+#submit:hover{
+    background-color: rgb(4, 88, 152);
+}
+#reset:hover{
+    background-color: rgb(4, 88, 152);
+}
+.comp{
+    font-family: 'Annapurna SIL';
+    font-size: 200%;
+    text-align: left;
+    margin-top: 50px;
+}
+ol{
+    list-style-type: square;
+}
+li{
+    font-size: 150%;
+    font-weight: 500;
 }
