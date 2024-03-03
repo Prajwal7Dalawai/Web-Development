@@ -7,39 +7,37 @@ body{
 .background{
     background-image: url("https://th.bing.com/th/id/OIP.hqfJdBBARTcW4LkgU7lVzQHaEc?w=319&h=191&c=7&r=0&o=5&dpr=1.3&pid=1.7");
     background-repeat:no-repeat;
-    height: 850px;
+    background-size: contain;
     width: 100%;
     background-size: 100% 100%;
 }
 nav{
     background-color: rgba(82, 187, 236, 0.821);
-    padding: 5px;
-    height: 80px;
+    
     display: flex;
+    justify-content: center;
     top: 0px;
     position: sticky;
-    justify-content: left;
-    align-items: flex-start;
     border-radius: 0px 0px 20px 20px;
 }
-#back{
+#backe{
     text-decoration: none;
     text-align: center;
-    font-size: 200%;
+    font-size: 150%;
     margin-bottom: 20px;
-    margin-right: 50px;
+    margin-right: 20px;
 }
 .back{
     margin-top: 10px;
     font-weight: 800;
-    margin-left: 20px ;
+    margin-left: 10px ;
 }
 #logo{
     height: 80px;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 .Slogo{ 
-    margin-right: 10px;
+    margin-right: 0px;
 }
 .sengine{
     display: grid;
@@ -89,10 +87,13 @@ textarea {
     font-weight: 700;
 }
 .signup{
-    margin-left: 30px;
+    margin-left: 10px;
+    margin-right: 5px;
     margin-top: 25px;
-    font-size: 110%;
+    font-size: 80%;
+    padding-top: 4px;
     font-weight: 600;
+    text-align: center;
 }
 .signup a{
     font-size: 110%;
@@ -100,7 +101,6 @@ textarea {
 }
 .container{
     display: flex;
-    height: 700px;
     background-color: rgba(28, 27, 27, 0.418);
     color: white;
 }
@@ -125,6 +125,9 @@ textarea {
     color: yellow;
     font-family: 'Montserrat';
     font-weight: 800;
+}
+#profile a{
+    color: rgb(61, 218, 13);
 }
 .profile img{
 border-radius: 50%;
@@ -155,8 +158,6 @@ li a{
 .History{
     margin-left: 20px;
     text-align: justify;
-    box-sizing: content-box;
-    overflow:scroll;
 }
 .History h1{
     font-size: 150%;
@@ -174,7 +175,6 @@ li a{
 #Ads{
   /*  background-color:rgba(240, 248, 255, 0.396) ;*/
      width: 20%;
-     height: 720px;
  }
  .Achievements{
     margin-left: 10px;
