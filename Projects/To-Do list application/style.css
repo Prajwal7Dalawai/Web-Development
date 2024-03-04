@@ -45,7 +45,7 @@ h2{
     text-align:center;    
 }
 th {
-   padding-right: 140px;
+   padding-right: 100px;
    font-family: 'Times New Roman';
    color: aqua;
    padding-left: 10px;
@@ -53,7 +53,7 @@ th {
 }
 
 table{
-    margin-left: 20px;
+    margin-left: 10px;
     border: 2px solid white;
     margin-top: 20px;
     border-collapse: collapse;

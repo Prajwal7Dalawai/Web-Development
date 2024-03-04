@@ -38,8 +38,9 @@ svg.setAttribute('id','delete');
 svg.setAttribute('color','white');
 td4.appendChild(svg);
 
-svg.addEventListener('click',()=>{
-   table.removeChild(tr);
+svg.addEventListener('click',(event)=>{             //Deleting the row when clicked on the delete icon
+   table.removeChild(tr); // another way of deleting the the row: pass (event) in the arguement, then event.target.nodeName == "IMG"{table.removeChild(tr)}
+   console.log("deleted")
 });
 
 check.addEventListener("click",function(){
