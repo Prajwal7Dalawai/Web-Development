@@ -40,3 +40,6 @@ body{
     justify-content: center;
     align-items: center;
 }
+.flash{
+    background-color: white;
+}
