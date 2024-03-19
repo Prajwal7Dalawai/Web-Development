@@ -43,6 +43,7 @@ function levelup(){
 }
 
 function btnpress(){
+    console.log(this.innerText);
     let btn = this;
     user_flash(btn)
 
