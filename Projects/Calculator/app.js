@@ -10,13 +10,17 @@ keys.forEach(key=>{
     console.log(seq);
     });
 });
+let clear = document.querySelector('.clear');
+clear.addEventListener('click',()=>{
+    reset();
+})
 equal.addEventListener('click',()=>{
 if(seq.length<3){
     alert("Enter The operands to calculate");
 }
 else{
-    var num1 = seq[0];
-    var num2 = seq[2];
+    var num1 = parseFloat(seq[0]); // Convert to number
+    var num2 = parseFloat(seq[2]); // Convert to number
     show.innerText=(calculate(num1,seq[1],num2));
     //reset();
 }
