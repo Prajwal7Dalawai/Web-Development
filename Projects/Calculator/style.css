@@ -6,7 +6,7 @@ body{
     background-color: bisque;
 }
 .main{
-    min-width: 200px;
+    min-width: 600px;
     border: 2px solid black;
    display: grid;
    padding-top: 30px;

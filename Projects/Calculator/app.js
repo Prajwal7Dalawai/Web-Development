@@ -23,9 +23,26 @@ if(seq.length<3){
     alert("Enter The operands to calculate");
 }
 else{
-    var num1 = parseFloat(seq[0]); // Convert to number
-    var num2 = parseFloat(seq[2]); // Convert to number
-    show.innerText=(calculate(num1,seq[1],num2));
+    let firstele = '',secele = '';
+    let final = [];
+    for(var i = 0;i<seq.length;i++){
+        if(seq[i] == '+' || seq[i] == '/' || seq[i] == 'X' || seq[i] == '-'){
+            break;
+        }
+        firstele = firstele+seq[i];
+    }
+    var num1 = parseFloat(firstele); // Convert to number
+    op = seq [i];
+    let j = i+1;
+    for(i=j;i<seq.length-1;i++){
+        secele = secele + seq[i]
+    }
+    var num2 = parseFloat(secele); // Convert to number
+    console.log("1st operand:",num1);
+    console.log("2nd operand",num2);
+    console.log('Operator',op);
+    console.log('result:',calculate(num1,op,num2));
+    show.innerText=(calculate(num1,op,num2));
     //reset();
 }
 });
