@@ -13,7 +13,7 @@ body{
    background-color:darkgray;
 }
 .show{
-    width: 390px;
+    width: 450px;
     height: 80px;
     border: 2px solid black;
     margin: 0 auto;
@@ -51,4 +51,7 @@ body{
     display: flex;
     justify-content: space-between;
     
+}
+.green{
+    background-color: aquamarine;
 }

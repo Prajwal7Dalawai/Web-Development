@@ -5,6 +5,10 @@ let seq = [];
 show.innerText= '';
 keys.forEach(key=>{
     key.addEventListener('click',()=>{
+        key.classList.add('green');
+        setTimeout(()=>{
+            key.classList.remove('green');
+        },150);
     show.innerText = show.innerText + key.innerText;
     seq.push(key.innerText);
     console.log(seq);
