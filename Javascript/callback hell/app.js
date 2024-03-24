@@ -1,4 +1,4 @@
-h1 = document.querySelector('h1');
+/*h1 = document.querySelector('h1');
 
 function change(color,delay,changecolor){
     setTimeout(()=>{
@@ -27,3 +27,25 @@ setTimeout(()=>{
 setTimeout(()=>{
     h1.style.color = "green";
 },3000);*/
+//Promises
+
+function savedb(data){
+    return new Promise((resolve,reject)=>{
+        let intspeed = Math.floor(Math.random() * 10) + 1;
+        if(intspeed > 4){
+            resolve("success: data was saved");
+        }
+        else{
+            reject("failure: couldn't save data");
+        }
+    });
+}
+
+savedb("data",
+    ()=>{
+        console.log("Data saved");
+        savedb("saved",()=>{console.log("Data saved again");},()=>{console.log("Couldnt save data");});
+    },
+    ()=>{
+        console.log("error, slow internet connection.");
+    });
