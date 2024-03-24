@@ -49,3 +49,15 @@ savedb("data",
     ()=>{
         console.log("error, slow internet connection.");
     });
+
+    //let request = savedb("promise obj");
+    
+    savedb("promise obj").then(()=>{
+        console.log("Promise was accepted");
+       // console.log(request);
+    })
+     .catch(()=>{
+        console.log("Promise was rejected");
+        //console.log(request);
+     });
+    
