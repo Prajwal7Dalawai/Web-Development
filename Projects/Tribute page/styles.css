@@ -1,0 +1,28 @@
+body{
+    background-color: black;
+    color: white;
+    background-image: url('Images/Virat.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.back{
+    width: 45%;
+    height: 100%;
+    color: white;
+    text-align: left;
+    margin-top: 0;
+    margin-left: 0;
+}
+p{
+    font-family: 'Edu NSW ACT Foundation';
+    color: gold;
+    font-size: 130%;
+}
+#head{
+    font-size:250%;
+    font-weight: 800;
+    margin-left: 15px;
+    font-family: 'Noto Sans';
+    font-style: italic;
+    color: blue;
+}
