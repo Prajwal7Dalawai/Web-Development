@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Login and Registration</title>
+<style>
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+}
+body{
+    background-color: rgb(21, 83, 93);
+}
+form{
+    margin:0 auto;
+    margin-top: 20px;
+    border: 3px solid whitesmoke;
+    width: 40%;
+    height: 75%;
+    padding: 10px;
+  }
+  label{
+    margin-left: px;
+    display: inline-block;
+    padding-left: 10px;
+    text-align: right;
+    font-size: large;
+  }
+  button{
+    background-color: whitesmoke;
+    color: black;
+    border: whitesmoke;
+    width: 40%;
+    height: 8%;
+    border-radius: 2em;
+    margin-left: 30%;
+    text-align: center;
+    font-size: large;
+  }
+  input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+</style>
+</head>
+<body><br>
+    <h1 style="text-align: center;font-family: 'Courier New', Courier, monospace;">WELCOME!!</h1>
+    <form action="action.php" method="POST">
+        <h2 style="text-align: center; padding-bottom: 10px; border-bottom: 3px solid whitesmoke;">REGISTRATION</h3><br>
+        <label>Name : </label><br>
+        <input type="text" name="name" style="color: black;" required placeholder="Your name"><br><br>
+        <label>Password : </label><br>
+        <input type="password" name="passwd" style="color: black;" required placeholder="Password"><br><br>
+        <button type="submit" name="register">Register</button>
+    </form>
+</body>
+</html>
