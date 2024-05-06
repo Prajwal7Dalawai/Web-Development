@@ -1,0 +1,23 @@
+body{
+    background-color: bisque;
+}
+span{
+    align-items: center;
+    background-color: bisque;
+    color: blueviolet;
+}
+section{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border:0cqb;
+    border-color: black;
+    padding: 5px;
+    width: 26%;
+    background-color: rgb(235, 206, 233);
+    color: rgb(6, 50, 243);
+}
+
+UL{
+    list-style-type: disc;
+    scroll-snap-type: proximity;
+    color: blue;
+}

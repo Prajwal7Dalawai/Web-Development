@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));   /*grid-template-items used to specify number of rows or columns required to form a grid*/
+            grid-gap: 20px;    /*repeat(no of rows/columns,relative size(in fr)/actual size(in px))*/
+            grid-auto-rows: minmax(100px,auto);  /*grid-auto-rows & grid-auto -columns used for giving a size for a grid. minmax(min_hieght,max_hieght) is a function used to specify the minimum and maximum hiegt of the grid.x*/
+            grid-auto-columns: minmax(50px,auto);
+
+        }
+        .items{
+            background-color: aquamarine;
+            border: 3px solid green;
+        }
+        #item2{
+            grid-row-start:2 ;
+            grid-row-end: 3;
+        }
+    </style>
+    <title>CSS grid</title>
+</head>
+<body>
+    <div class="container">
+        <div class="items" id="item1">Dabba 1</div>
+        <div class="items" id="item2">Dabba 2</div>
+        <div class="items">Dabba 3</div>
+        <div class="items">Dabba 4</div>
+        <div class="items">Dabba 5</div>
+    </div>
+</body>
+</html>
