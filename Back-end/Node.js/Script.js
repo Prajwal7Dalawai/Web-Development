@@ -14,7 +14,8 @@
 //     console.log("Hello ", process.argv[i]);
 // }
 
-const math = require("./math1")
+const info = require("./Fruits");
 
-console.log(math);
-console.log(math.Pi);
+console.log(info);
+console.log(info[0]);
+
