@@ -9,7 +9,12 @@
 // console.log(concat(str1,str2));
 
 // let args = process.argv;
-console.log("hi");
-for(let i=0; i<process.argv.leghth; i++){
-    console.log("Hello ", process.argv[i]);
-}
+// console.log("hi");
+// for(let i=0; i<process.argv.leghth; i++){
+//     console.log("Hello ", process.argv[i]);
+// }
+
+const math = require("./math1")
+
+console.log(math);
+console.log(math.Pi);
