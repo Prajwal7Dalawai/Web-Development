@@ -14,8 +14,8 @@
 //     console.log("Hello ", process.argv[i]);
 // }
 
-const info = require("./Fruits");
-
-console.log(info);
-console.log(info[0]);
+// const info = require("./Fruits");
+import {apple,banana} from "./Fruits"
+console.log(banana);
+console.log(apple);
 

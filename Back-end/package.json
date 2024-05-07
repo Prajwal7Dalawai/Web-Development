@@ -1,0 +1,19 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "This is my own package",
+  "main": "Node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "module",
+    "url": "git+https://github.com/Prajwal7Dalawai/Web-Development.git#main"
+  },
+  "author": "Prajwal Dalawai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Prajwal7Dalawai/Web-Development/issues"
+  },
+  "homepage": "https://github.com/Prajwal7Dalawai/Web-Development/tree/main#readme"
+}
