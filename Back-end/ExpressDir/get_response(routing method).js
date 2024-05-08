@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 app.get('/search',(req,response)=>{       //This message will be displayed as a resonse when we try to access this particular webpage.
     //response.send("Search Engine Temporarily Not available..");
     console.log("Visited search Engine..");
-    response.send("<h1>Search engine currently unavailable!</h1>");
+    response.send("<h1>Search engine currently Not Available!</h1>");
 });
 
 app.get('/contact',(req,response)=>{
