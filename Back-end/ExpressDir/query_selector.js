@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 app.get("/search",(req,res)=>{
     let qry = req.query;
     console.log(qry);
-    res.send(`<h1>Search results for Query ${req.query}</h1>`);
+    res.send(`<h1>Search results for Query ${qry.q}</h1>`);
 });
 app.get("*",(req,res)=>{
     res.send("<h1>NO results</h1>");
