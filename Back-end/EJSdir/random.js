@@ -18,6 +18,6 @@ app.get("/",(req,res)=>{
 
 app.get("/random",(req,res)=>{
     let number = Math.floor(Math.random() * 100 +1);
-    res.render("Random no/random.ejs",{num:number});
+    res.render("Random no/random.ejs",{number});
     console.log("Entered random number generating page.")
 })
