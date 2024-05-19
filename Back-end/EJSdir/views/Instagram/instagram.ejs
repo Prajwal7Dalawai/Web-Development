@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= username %></title>
 </head>
-<style>
+<!-- <style>
     body{
         background-image: linear-gradient(violet,indigo,blue,green,yellow,orange,red);
         background-repeat: no-repeat;
@@ -14,17 +14,27 @@
     a{
         color: white;
     }
-</style>
+</style> -->
 <body>
-    <h2>This Page Belongs to <a href="https://instagram.com/prajwal_dalawai" target="_blank">@<%= username %></a></h2>
+    <!-- <h2>This Page Belongs to <a href="https://instagram.com/prajwal_dalawai" target="_blank">@</a></h2> -->
+    <h2>This page belongs to @<%= data.name %></h2>
     <button onclick="displaymsg();">Follow</button>
     <button onclick="display();">Message</button><br><br>
+    <p>followers:<%= data.followers %> </p>
+    <p>following: <%= data.following %></p>
     <h2 style="text-decoration: underline;">Accounts that Follow You.</h2>
     <ul>
         <% for(let user of followers){ %>
             <li><%= user %></li>
         <%  } %>
     </ul>
+    <hr>
+
+    <% for(let post of data.posts){ %>
+           <img src="<%= post.image %>" alt="some image" height="300px
+           " width="300px">
+           <p> likes: <%=  post.likes %> &nbsp;&nbsp;&nbsp;&nbsp; Comments; <%= post.comments %> </p>
+        <% } %>
 
     <span id="dis"></span>
     <script type="text/javascript">
@@ -39,6 +49,3 @@
     </script>
 </body>
 </html>
-
-
-}
