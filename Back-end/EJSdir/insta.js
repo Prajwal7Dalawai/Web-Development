@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const instadata = require("./views/Instagram/data.json");
 
 const port = 8085;
 
@@ -18,8 +19,13 @@ app.get("/",(req,res)=>{
 
 app.get("/instagram.com/:username",(req,res)=>{
 let { username } = req.params;
+const data = instadata[username];
 const followers = ["adam","pushpa","kgf","kantara"];
+console.log(data);
 console.log("Username is: " + username);
 console.log(username);
-res.render("Instagram/instagram",{username,followers});
+if(data)
+res.render("Instagram/instagram",{username,data,followers});
+else
+res.render("Instagram/error.ejs");
 });
