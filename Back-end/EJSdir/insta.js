@@ -16,9 +16,10 @@ app.get("/",(req,res)=>{
     console.log("Entered root page.")
 });
 
-app.get("/ig/:username",(req,res)=>{
+app.get("/instagram.com/:username",(req,res)=>{
 let { username } = req.params;
+const followers = ["adam","pushpa","kgf","kantara"];
 console.log("Username is: " + username);
 console.log(username);
-res.render("Instagram/instagram",{username});
+res.render("Instagram/instagram",{username,followers});
 });

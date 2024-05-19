@@ -5,9 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= username %></title>
 </head>
+<style>
+    body{
+        background-image: linear-gradient(violet,indigo,blue,green,yellow,orange,red);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    a{
+        color: white;
+    }
+</style>
 <body>
     <h2>This Page Belongs to <a href="https://instagram.com/prajwal_dalawai" target="_blank">@<%= username %></a></h2>
-    <button>Follow</button>
-    <button>Message</button>
+    <button onclick="displaymsg();">Follow</button>
+    <button onclick="display();">Message</button><br><br>
+    <h2 style="text-decoration: underline;">Accounts that Follow You.</h2>
+    <ul>
+        <% for(let user of followers){ %>
+            <li><%= user %></li>
+        <%  } %>
+    </ul>
+
+    <span id="dis"></span>
+    <script type="text/javascript">
+        function displaymsg(){
+            let dis = document.querySelector('#dis');
+            dis.innerHTML = "<h1> Now You have followed <%= username%>...";
+        }
+        function display(){
+            let dis = document.querySelector('#dis');
+            dis.innerHTML = "<h1> You are now chatting with <%= username%>..."; 
+        }
+    </script>
 </body>
 </html>
+
+
+}
