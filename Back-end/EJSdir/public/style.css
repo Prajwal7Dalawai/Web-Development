@@ -1,0 +1,8 @@
+body{
+    background-image: linear-gradient(violet,indigo,blue,green,yellow,orange,red);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+a{
+    color: white;
+}
