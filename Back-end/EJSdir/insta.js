@@ -10,7 +10,11 @@ app.listen(port, (re)=>{
 });
 
 app.set("view engine", "ejs");
-//app.set("views",path.join(__dirname),"/views");
+app.set("views",path.join(__dirname,"/views"));
+
+app.use(express.static("public"));  //Must and should folder named public must be there in EJS directory.
+app.set(express.static(path.join(__dirname,"/public")));
+
 
 app.get("/",(req,res)=>{
     res.send("Welcome to the root page");
