@@ -5,8 +5,9 @@ const app = express();
 const port = 8080;
 const path = require("path");
 const { v4: uuidv4 } = require('uuid');
-uuidv4();
+const methodOverride = require("method-override");
 
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: true}));
 
 app.listen(port, ()=>{
@@ -98,7 +99,8 @@ app.patch("/post/:id", (req,res)=>{
     post.content = newContent;
     console.log(post);
     console.log(id);
-    res.send("Patch request working");
+   // res.send("Patch request working");
+    res.redirect("/post");
 });
 
 app.get("/post/:id/edit", (req,res)=>{
@@ -107,6 +109,9 @@ app.get("/post/:id/edit", (req,res)=>{
     res.render("editForm.ejs",{post});
 });
 
-app.patch("/post/:id/edit", (req,res)=>{
-
-});
+app.delete("/post/:id", (req,res)=>{
+    let { id } = req.params;
+    posts = posts.filter((p)=> id !== p.id);
+    //res.send("Delete Success");
+    res.redirect("/post");
+})
