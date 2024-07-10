@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@google/generative-ai": "^0.14.1",
+    "node.js": "^0.0.1-security"
+  },
+  "name": "praj-gpt",
+  "version": "1.0.0",
+  "description": "This is self designed GPT model using gemini generative-ai package",
+  "main": "praj-gpt.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "www.github.com/prajwal7dalawai/Web-development"
+  },
+  "author": "Prajwal dalawai",
+  "license": "ISC"
+}

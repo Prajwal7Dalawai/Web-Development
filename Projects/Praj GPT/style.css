@@ -1,0 +1,23 @@
+#response{
+    border: 2px solid black;
+    padding: 20px;
+    background-color: antiquewhite;
+    visibility: hidden;
+    margin: 20px;
+    animation: typing 2s steps(40,end) 1;
+}
+textarea{
+    resize: none;
+    border-radius: 30px;
+    padding:10px 0px 0px 10px;
+    align-items: center;
+}
+textarea::placeholder{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 110%;
+}
+
+@keyframes typing {
+    from { height: 0; }
+    to { height: 100%; }
+  }
