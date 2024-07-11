@@ -1,7 +1,6 @@
-import  { GoogleGenerativeAI }  from "@google/generative-ai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 let prmt = document.querySelector('#text');
-
 let frm = document.querySelector('form');
 let isGenerated = false;
 
@@ -10,20 +9,43 @@ const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
 });
 
-// const res = await model.generateContent("Top 10 Programming Languages in boom");
-
-// console.log(res.response.text());
 let cont = document.querySelector('.container');
-
 let respons = document.getElementById('response');
 
-frm.addEventListener('submit',async (e)=>{
+frm.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if(prmt.value == ""){
+    alert("Enter the prompt"); 
+    }
+    else{  
     console.log(prmt.value);
     cont.style.visibility = "visible";
-    const res = await model.generateContent(prmt.value);
-    cont.style.visibility = "hidden";
-    const cleanedres = res.response.text().replace(/(\*\*|\#|\*)/g, "","");
-    respons.style.visibility = "visible";
-    respons.innerText = cleanedres;
+    try {
+        const res = await model.generateContent(prmt.value);
+        cont.style.visibility = "hidden";
+        const cleanedres = res.response.text().replace(/(\*\*|\#|\*)/g, "");
+        respons.style.visibility = "visible";
+        let div1 = document.createElement('div');
+        respons.insertAdjacentElement('afterbegin',div1);
+        div1.innerText = `\nResponse for the prompt: "${prmt.value}"\n\n`;
+        div1.innerText += `${cleanedres}\n`;
+        const hr = document.createElement('hr');
+        div1.insertAdjacentElement('beforeend',hr);
+        
+    } catch (e) {
+        console.log(e);
+        cont.style.visibility = "hidden";
+        let div1 = document.createElement('div');
+        respons.insertAdjacentElement('afterbegin',div1);
+        div1.innerText = `\nResponse for the prompt: "${prmt.value}"\n\n`;
+        div1.innerText += `${e}\n`;
+        const hr = document.createElement('hr');
+        div1.insertAdjacentElement('beforeend',hr);
+    }
+    prmt.value="";
+}
 });
+
+
+
+
