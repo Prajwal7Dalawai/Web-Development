@@ -1,4 +1,4 @@
-##PRAJ-GPT
+<h1>PRAJ-GPT</h1>
 
 <h3> About </h3>
 <p>This is the generative AI website designed by me with the implementation of generative AI model. This can be done with the help of .
