@@ -4,7 +4,8 @@ let prmt = document.querySelector('#text');
 let frm = document.querySelector('form');
 let isGenerated = false;
 
-const genAI = new GoogleGenerativeAI("AIzaSyDa3s0S6eMgaMBtLmidA3xzClDfNyIXMik");
+apiKey = "AIzaSyDa3s0S6eMgaMBtLmidA3xzClDfNyIXMik"
+const genAI = new GoogleGenerativeAI(apiKey);
 const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
 });
