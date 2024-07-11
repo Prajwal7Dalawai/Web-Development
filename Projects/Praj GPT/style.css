@@ -81,12 +81,11 @@ button{
   width: 80px;
   border-radius: 30px;
   border: 0px;
-  background-color:rgb(229, 225, 225);
 }
 
-button:hover{
+/* button:hover{
   background-color: grey;
-}
+} */
 
   .container {
     --uib-size: 35px;
