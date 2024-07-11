@@ -50,5 +50,5 @@ Remember, the best model for you depends on your specific needs and the task at 
 </p>
 
 <h3>Installation</h3>
-<p> Run the following command in the command prompt:
-npm i @google/generative-ai</p>
+<p> Run the following command in the command prompt:<br>
+npm i @google/generative-ai<br>The package will be installed.</p>
