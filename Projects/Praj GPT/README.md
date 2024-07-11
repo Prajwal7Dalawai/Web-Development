@@ -5,7 +5,7 @@
 @google/generative-ai package released by gemini-AI by google.</p>
 <p> You need to have API key of gemini-AI and you can choose whichever the model you want during the time of design.</p>
 
-<h3> Brief Description of the all three models <h3>
+<h3> Brief Description of the all three models </h3>
 <p>Gemini-1.5-flash: This is a flash-based model, meaning it's trained on a massive dataset of text and code. It excels at creative and factual tasks, including:
 
 Generating text: Writing stories, poems, code, scripts, musical pieces, email, letters, etc.
