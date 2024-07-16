@@ -11,6 +11,12 @@
     "url": "git+https://github.com/Prajwal7Dalawai/Web-Development.git#main"
   },
   "author": "Prajwal Dalawai",
+  "dependencies": {
+    "node.js" :"version to be known",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "figlet": "^1.7.0"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Prajwal7Dalawai/Web-Development/issues"
