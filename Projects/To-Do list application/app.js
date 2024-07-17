@@ -21,7 +21,7 @@ tr.insertAdjacentElement('afterbegin',td1);
 
 let td2=document.createElement('td');                //Creating element for second row(Description)
 tr.insertAdjacentElement('beforeend',td2);
-td2.innerText = desc.value;        
+td2.innerText = desc.value;    
 
 let td3 = document.createElement('td');               //Creating element for checkbox
 tr.insertAdjacentElement('beforeend',td3)

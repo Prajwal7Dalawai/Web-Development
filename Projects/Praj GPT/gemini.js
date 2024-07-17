@@ -2,9 +2,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 let prmt = document.querySelector('#text');
 let frm = document.querySelector('form');
-let isGenerated = false;
 
-apiKey = "AIzaSyDa3s0S6eMgaMBtLmidA3xzClDfNyIXMik"
+let apiKey = "AIzaSyDa3s0S6eMgaMBtLmidA3xzClDfNyIXMik"
 const genAI = new GoogleGenerativeAI(apiKey);
 const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
