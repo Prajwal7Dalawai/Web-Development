@@ -14,6 +14,10 @@
   "description": "",
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
-    "mysql2": "^3.10.3"
+    "express": "^4.19.2",
+    "mysql2": "^3.10.3",
+    "node": "^22.5.0",
+    "node.js": "^0.0.1-security",
+    "uuid": "^10.0.0"
   }
 }
