@@ -14,7 +14,9 @@
   "description": "",
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
+    "ejs": "^3.1.10",
     "express": "^4.19.2",
+    "method-override": "^3.0.0",
     "mysql2": "^3.10.3",
     "node": "^22.5.0",
     "node.js": "^0.0.1-security",

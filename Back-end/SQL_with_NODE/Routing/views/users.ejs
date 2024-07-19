@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users Data</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            padding: 2px;
+            background-color: aquamarine;
+        }
+    th{
+        background-color:aqua ;
+    }
+    </style>
+</head>
+<body>
+    <% let count = 0 %>
+    <table border="1px solid black">
+        <tr>
+            <th>Sl.no</th>
+            <th>ID</th>
+            <th>Username</th>
+            <th>E-mail</th>
+        </tr>
+        <% for(user of result){ %>
+            <tr>
+                <td><% count = count + 1 %><%= count++ %></td>
+                <td><%= user.id %></td>
+                <td><%= user.username %></td>
+                <td> <%= user.email %></td>
+                <td> <a href="/user/<%= user.id %>/edit" target="_blank"><button>Edit Details</button></a></td>
+            </tr>
+
+       <% } %>
+    </table>
+</body>
+</html>
