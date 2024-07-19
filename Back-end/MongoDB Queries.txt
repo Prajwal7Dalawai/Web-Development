@@ -1,0 +1,51 @@
+MongoDB Queries
+
+1. db.student.insertOne({name:"Prajwal", age:20})	//insert only one entry
+
+2. db.student.insertMany([{name:"Uma", age:47}, {name:"Somashekhar", age:58}])	//insert multiple entries
+
+3. db.student.find()	//returns all the entries
+
+4. db.student.find({name:"Prajwal"})	//Finds all entries who have name Prajwal
+
+5. db.student.findOne({any condition})	//return only one entry
+
+5. db.student.find({age:{$gt:18}})	//returns all the entries whose age>18
+
+6. db.student.find({city: {$in: ["Bengaluru","Delhi"]}})
+
+7. db.student.updateOne(<filter>,<update>,<options>)	//ex; db.student.updateOne({name:"Adam"},{$set:{marks:95}})
+
+8. db.student.updateMany({city:"Delhi"},{$set:{city:"New Delhi"}})	//Updates whosever city is Delhi to New Delhi.
+
+9. db.student.replaceOne({name:"Bob"},{name:"Evelyn",city:"Hubli",age:20,marks:95})   //Replaces whole document of the person named 'Bob'
+
+10. db.student.insertOne({name:"Aditya", performance:{marks:88,grade:"A"}})	//nesting
+
+11. db.student.find({"performance.grade":"A"})		//finding specefic data in nested document
+
+12. db.student.deleteOne({city:"New Delhi"})	//deletes the student who is resident of New Delhi
+
+13. db.student.deleteMany({}) //delete all the entries in table.
+
+14. db.dropDatabase()	//deletes complete database
+
+
+
+Comparison operators:
+
+1. $eq: Matches values that are equal to a specified value.
+2. $gt: Matches values that are greater than a specified value.
+3. $gte: Matches values that are greater than or equal to a specified value.
+4. $in: Matches any of the values specified in an array.
+5. $lt: Matches values that are less than a specified value.
+6. $lte: Matches values that are less than or equal to a specified value.
+7. $ne: Matches all values that are not equal to a specified value.
+8. $nin: Matches none of the values specified in an array.
+
+Logical Operators:
+
+1. $and: Joins query clauses with a logical AND returns all documents that match the conditions of both clauses.
+2. $not: Inverts the effect of a query expression and returns documents that do not match the query expression.
+3. $nor: Joins query clauses with a logical NOR returns all documents that fail to match both clauses.
+4. $or: Joins query clauses with a logical OR returns all documents that match the conditions of either clause.
