@@ -56,3 +56,7 @@ User.updateMany({age:{$gt:18}},{adult:"yes"}).then((res)=>{
 .catch((err)=>{
     console.log(err);
 });     //updating multiple values
+
+User.deleteOne({name:"Bruce"}).then((res)=>{console.log(res);
+})
+.catch((err)=>{ console.log(err) });    //Deleting one document
