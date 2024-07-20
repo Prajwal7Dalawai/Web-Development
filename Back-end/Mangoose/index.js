@@ -34,3 +34,15 @@ user2.save()
     console.log(res);
 })
 .catch((err)=> {console.log(err)} );
+
+User.insertMany([    //inserting many data at once
+    { name:"Tony", email:"tony@gmail.com", age:18 },
+    { name:"Peter", email:"peter@gmail.com", age:20 },
+    { name:"Bruce", email:"bruce@gmail.com", age:22 }
+]).then((res)=> { console.log(res) })
+.catch((err)=>{ console.log(err) })
+
+User.find({age: {$gte: 20}}).then((res)=>{
+    console.log(res);
+})
+.catch((err)=>{ console.log(err) });
