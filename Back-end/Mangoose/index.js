@@ -24,8 +24,8 @@ const user1 = new User({
 user1.save();   //Inserts one document into the collection
 
 const user2 = new User({
-    name: "Sirisha",
-    email:"sirisha@gmail.com",
+    name: "Virat",
+    email:"virat@gmail.com",
     age:21
 });
 
