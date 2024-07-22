@@ -8,7 +8,7 @@ async function main(){
     await mongoose.connect("mongodb://127.0.0.1:27017/college");    //Establishing Connection
 }
 
-const userShcema = new mongoose.mongoose.Schema({   //Defining Schema
+const userShcema = new mongoose.Schema({   //Defining Schema
     name: String,
     email: String,
     age: Number
@@ -47,7 +47,7 @@ User.find({age: {$gte: 20}}).then((res)=>{
 })
 .catch((err)=>{ console.log(err) });
 
-User.updateOne({name:"Prajwal"},         {email:"prajwaldalawai123@gmail.com"}).then((res)=>{console.log(res)})
+User.updateOne({name:"Prajwal"},{email:"prajwaldalawai123@gmail.com"}).then((res)=>{console.log(res)})
 .catch((err)=>{console.log(err)});  //updating single value
 
 User.updateMany({age:{$gt:18}},{adult:"yes"}).then((res)=>{

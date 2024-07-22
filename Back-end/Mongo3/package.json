@@ -1,0 +1,20 @@
+{
+  "name": "mongo3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "www.github.com/prajwal7dalawai/Web-Development"
+  },
+  "author": "Prajwal Dalawai",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.1"
+  }
+}
