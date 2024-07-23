@@ -1,7 +1,8 @@
 .chats{
     background-color: aquamarine;
+    width: max-content;
     border-radius: 20px;
-    padding: 5px;
+    padding: 20px;
 }
 .from{
     background-color: yellow;
