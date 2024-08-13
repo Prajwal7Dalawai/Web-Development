@@ -14,11 +14,13 @@
     <% for(let chat of chats){ %>
         <div class="chats">
             <span class="from">From: <%= chat.from %></span><br>
-            <p>Message: <%= chat.message %>&nbsp;&nbsp;<form action="/chats/<%= chat._id %>/edit " method="get"> <button type="submit">Edit</button> </form></p>
+            <p>Message: <%= chat.message %>&nbsp;&nbsp;<form action="/chats/<%= chat._id %>/edit " method="get"> <button type="submit">Edit</button> </form>
+            &nbsp;&nbsp;<form id="delete"  action="/chats/<%= chat._id %>?_method=DELETE" method="post"><button type="submit">Delete Message</button></form></p>
             <p>Date: <%= chat.date.toString().split(" ")[4] %></p>
             <p>Time: <%= chat.date.toString().split(" ").slice(0,4).join(" ") %></p>
         </div>
         <hr>
  <%  } %>
 </body>
+<script src="app.js"></script>
 </html>
