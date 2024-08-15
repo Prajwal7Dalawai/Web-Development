@@ -6,11 +6,14 @@ const port = 8080;
 const mongo_url = "mongodb://127.0.0.1:27017/wanderlust";
 const Listing = require('./models/listing.js');
 const path = require('path');
+const ejsMate = require('ejs-mate');
+app.engine("ejs",ejsMate);
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
+app.use(express.static(path.join(__dirname,"/public")));
 
 main().then(()=>{
     console.log("Connected to Wanderlust Database");
@@ -90,9 +93,10 @@ app.get("/listings/:id/edit", async (request, response) => {
 //Update Route
 app.put("/listings/:id", async (req,res)=>{
     let {id} = req.params;
+    
     const listing = await Listing.findByIdAndUpdate(id,{...req.body.Listing});
     console.log(listing);
-    res.redirect("/listings");
+    res.redirect(`/listings/${id}`);
 });
 
 //Delete Route
