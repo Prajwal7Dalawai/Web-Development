@@ -90,3 +90,7 @@ body{
 .btns a{
     margin-right: 10px;
 }
+
+.btn{
+    margin-bottom: 10px !important;
+}

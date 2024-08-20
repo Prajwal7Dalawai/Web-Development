@@ -10,30 +10,70 @@
     <div class="row">
         <div class="col-8 offset-2">
     <h1>Create a new Listing</h1>
-    <form action="/listings" method="post">
+    <form action="/listings" method="post" class="needs-validation" novalidate>
         <div class="mb-3">
         <label for="title" class="form-label">Add a catchy title</label>
-        <input type="text" name="Listing[title]" placeholder="Enter Title" class="form-control"><br><br> </div>
+        <input type="text" name="Listing[title]" placeholder="Enter Title" class="form-control" required>
+        <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please Add Title!
+          </div><br> 
+    </div>
         <div class="mb-3">
             <label for="description" class="form-label">Enter Description</label>
-            <textarea type="text" name="Listing[description]" placeholder="Enter Description of listing" class="form-control"></textarea><br><br> </div>
+            <textarea type="text" name="Listing[description]" placeholder="Enter Description of listing" class="form-control" required></textarea>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please Add Description!
+              </div><br> 
+        </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Enter Image URL</label>
-                <input type="text" name="Listing[image]" placeholder="Enter Image URL" class="form-control"><br><br> </div>
+                <input type="text" name="Listing[image]" placeholder="Enter Image URL" class="form-control" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+
+                <div class="invalid-feedback">
+                    Please provide image URL!.
+                  </div><br></div>
                 <div class="row">
                     <div class="mb-3 col-md-4">
                         <label for="price" class="form-label">Enter Price</label>
-                        <input type="text" name="Listing[price]" placeholder="Enter Price(in INR)" class="form-control"><br><br> </div>
+                        <input type="text" name="Listing[price]" required placeholder="Enter Price(in INR)" class="form-control">
+                        <div class="valid-feedback">
+                            Looks good!
+                          </div>
+        
+                        <div class="invalid-feedback">
+                            Please Enter Price!
+                          </div><br> </div>
                         <div class="mb-3 col-md-8">
                             <label for="location" class="form-label">Enter Location</label>
-                            <input type="text" name="Listing[location]" placeholder="Enter Location" class="form-control"><br><br> </div>
+                            <input type="text" required name="Listing[location]" placeholder="Enter Location" class="form-control">
+                            <div class="valid-feedback">
+                                Looks good!
+                              </div>
+            
+                            <div class="invalid-feedback">
+                                Please Enter Location!.
+                              </div><br> </div>
                 </div>
-               
                         <div class="mb-3">
                             <label for="country" class="form-label">Enter Country</label>
-                            <input type="text" name="Listing[country]" placeholder="Enter Country" class="form-control"><br><br> </div>
-        <button type="submit" class="btn btn-dark add-btn">Create Listing</button>
-    <br><br>
+                            <input type="text" required name="Listing[country]" placeholder="Enter Country" class="form-control">
+                            <div class="valid-feedback">
+                                Looks good!
+                              </div>
+            
+                            <div class="invalid-feedback">
+                                Please Enter Country!.
+                              </div><br> </div>
+                            <button class="btn btn-dark add-btn col-md-2" type="submit">Create Listing</button>
     </form>
 </div>
 </div>
