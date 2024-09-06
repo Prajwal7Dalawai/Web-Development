@@ -13,11 +13,12 @@ const ExpressError = require('./utils/ExpressError.js');
 const {listingSchema, reviewSchema} = require('./schema.js');
 app.set("view engine","ejs");
 const Reviews = require('./models/reviews.js');
+const listings = require('./routes/listing.js');
 app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname,"/public")));
-
+app.use('/listings',listings);
 // // Utility Middleware logger
 // app.use((req,res,next)=>{
 //     req.time = new Date(Date.now()).toString();
@@ -28,27 +29,6 @@ app.use(express.static(path.join(__dirname,"/public")));
 //     next();
 // });
 
-const validateListing = (req,res,next) =>{
-    let {error} = listingSchema.validate(req.body);
-    if(error){
-        let errMsg = error.details.map((el)=>el.message).join(",");
-        throw new ExpressError(400,errMsg);
-    }
-    else{
-        next();
-    }
-};
-
-const validateReview = (req,res,next) =>{
-    let {error} = reviewSchema.validate(req.body);
-    if(error){
-        let errMsg = error.details.map((el)=>el.message).join(",");
-        throw new ExpressError(400,errMsg);
-    }
-    else{
-        next();
-    }
-};
 
 main().then(()=>{
     console.log("Connected to Wanderlust Database");
@@ -84,93 +64,6 @@ app.get("/testListing",async (req,res)=>{
     res.send("Successfull Listing;");
 });
 
-//listings route
-app.get('/listings', async(request,response)=>{
-   const allListings = await Listing.find({});
-   response.render("listings/index.ejs",{allListings});
-});
-
-//New Listing Route
-app.get("/listings/new",(request,response)=>{
-    response.render("listings/new.ejs")
-});
-
-//show route
-app.get('/listings/:id',async (request,response,next)=>{
-    try{
-    let {id} = request.params;
-
-    const listing = await Listing.findById(id).populate("reviews");
-    response.render("listings/show.ejs",{listing});
-    }
-    catch(err){
-        next(new ExpressError(500,"Id Doesn't Exist"));
-    }
-});
-
-//create Route
-app.post("/listings",validateListing,wrapAsync(async (request,response,next)=>{
-  //  let {title,description,image,price,location,country} = request.body;
-  const newlisting = new Listing(request.body.Listing);
-  await newlisting.save();
-  response.redirect("/listings");
-}
-));
-
-//edit route
-app.get("/listings/:id/edit", async (request, response) => {
-    let { id } = request.params;
-    try {
-        const listing = await Listing.findById(id);
-        console.log(listing.image); // Log the listing object to verify its structure
-        response.render("listings/edit.ejs", { listing });
-    } catch (error) {
-        console.error(error);
-        response.status(500).send("Internal Server Error");
-    }
-});
-
-//Update Route
-app.put("/listings/:id", validateListing ,async (req,res)=>{
-    let {id} = req.params; 
-    const listing = await Listing.findByIdAndUpdate(id,{...req.body.Listing});
-    res.redirect(`/listings/${id}`);
-});
-
-//Reviews route
-
-app.post("/listings/:id/reviews",validateReview,wrapAsync(async (req,res)=>{
-  let listing = await  Listing.findById(req.params.id);
-  let newReview = new Reviews(req.body.reviews);
-  listing.reviews.push(newReview);
-  await newReview.save();
-  await listing.save();
-  console.log("new Review saved");
-  res.redirect(`/listings/${listing._id}`);
-})
-);
-
-//delete review Route
-app.delete("/listings/:id/reviews/:reviewid", wrapAsync(async (req, res, next) => {
-    const { id, reviewid } = req.params; // Use 'reviewid' to match the route parameter
-
-    // Find the listing by ID and remove the review reference
-    let listing = await Listing.findByIdAndUpdate(id, { $pull: { reviews: reviewid } });
-
-    // Delete the actual review document from the Reviews collection
-    let review = await Reviews.findByIdAndDelete(reviewid);
-
-    res.redirect(`/listings/${id}`);
-}));
-
-
-//Delete Route
-app.delete("/listings/:id", async (req,res)=>{
-    let {id} = req.params;
-    let deleted = await Listing.findByIdAndDelete(id);
-    console.log(deleted);
-    res.redirect("/listings")
-});
 
 app.get("/error",(req,res)=>{
     res.render("listings/error.ejs",{message});
