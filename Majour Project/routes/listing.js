@@ -44,6 +44,10 @@ router.get('/', async(request,response)=>{
      let {id} = request.params;
  
      const listing = await Listing.findById(id).populate("reviews");
+     if(!listing){
+        request.flash("error","Listing Doesn't Exist");
+        response.redirect('/listings');
+     }
      response.render("listings/show.ejs",{listing});
      }
      catch(err){
@@ -56,6 +60,7 @@ router.get('/', async(request,response)=>{
    //  let {title,description,image,price,location,country} = request.body;
    const newlisting = new Listing(request.body.Listing);
    await newlisting.save();
+   request.flash("success","New Listing Created");
    response.redirect("/listings");
  }
  ));
@@ -65,6 +70,10 @@ router.get('/', async(request,response)=>{
      let { id } = request.params;
      try {
          const listing = await Listing.findById(id);
+         if(!listing){
+            request.flash("error","Listing Doesn't Exist");
+            response.redirect('/listings');
+         }
          console.log(listing.image); // Log the listing object to verify its structure
          response.render("listings/edit.ejs", { listing });
      } catch (error) {

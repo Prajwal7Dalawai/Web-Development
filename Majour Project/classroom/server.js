@@ -21,3 +21,7 @@ app.get('/getCookies',(req,res)=>{
 });
 app.use("/users",users);
 app.use("/posts",posts);
+app.get("/getSignedcookie",(req,res)=>{
+    res.cookie("madiein","India",{signed:true});
+    res.send("Cookie Sent");
+})

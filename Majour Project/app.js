@@ -7,18 +7,39 @@ const mongo_url = "mongodb://127.0.0.1:27017/wanderlust";
 const Listing = require('./models/listing.js');
 const path = require('path');
 const ejsMate = require('ejs-mate');
-app.engine("ejs",ejsMate);
 const wrapAsync = require('./utils/WrapAsync.js');
 const ExpressError = require('./utils/ExpressError.js');
 const {listingSchema, reviewSchema} = require('./schema.js');
-app.set("view engine","ejs");
 const Reviews = require('./models/reviews.js');
 const listings = require('./routes/listing.js');
+const session = require('express-session');
+const flash = require('connect-flash');
+
+const sessionOption = {
+    secret: "mysupersecretcode",
+    resave:false,
+    saveUninitialized: true,
+    cookie:{
+        expires: Date.now() + (7*24*60*60*1000),
+        maxAge: 7*24*60*60*1000,
+        httpOnly:true,
+    },
+};
+app.use(session(sessionOption));
+app.use(flash());
+app.use((req,res,next)=>{
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
+    next();
+});
+app.engine("ejs",ejsMate);
+app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname,"/public")));
 app.use('/listings',listings);
+
 // // Utility Middleware logger
 // app.use((req,res,next)=>{
 //     req.time = new Date(Date.now()).toString();
