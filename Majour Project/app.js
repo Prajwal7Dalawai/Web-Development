@@ -11,10 +11,13 @@ const wrapAsync = require('./utils/WrapAsync.js');
 const ExpressError = require('./utils/ExpressError.js');
 const {listingSchema, reviewSchema} = require('./schema.js');
 const Reviews = require('./models/reviews.js');
-const listings = require('./routes/listing.js');
+const listingsRouter = require('./routes/listing.js');
 const session = require('express-session');
 const flash = require('connect-flash');
-
+const passport = require('passport');
+const localStartergy = require('passport-local');
+const User = require('./models/user.js');
+const userRouter = require('./routes/user.js');
 const sessionOption = {
     secret: "mysupersecretcode",
     resave:false,
@@ -27,6 +30,11 @@ const sessionOption = {
 };
 app.use(session(sessionOption));
 app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new localStartergy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 app.use((req,res,next)=>{
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
@@ -38,7 +46,8 @@ app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname,"/public")));
-app.use('/listings',listings);
+app.use('/listings',listingsRouter);
+app.use("/",userRouter)
 
 // // Utility Middleware logger
 // app.use((req,res,next)=>{
@@ -70,6 +79,17 @@ app.listen(port,()=>{
 app.get("/",(req,res)=>{
     res.send("Hi there, This is root page");
 });
+
+// app.get("/demoUser",async (req,res)=>{
+//     let fakeUser = new User({
+//         email:"prajwal@gmail.com",
+//         username:"prajwal_dalawai",
+//     });
+//     let registeredUser = await User.register(fakeUser,"helloworld");
+//     res.send(registeredUser);
+// });
+
+
 
 app.get("/testListing",async (req,res)=>{
     let sampleListing = new Listing({
