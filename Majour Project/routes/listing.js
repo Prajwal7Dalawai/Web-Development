@@ -5,6 +5,7 @@ const Listing = require('../models/listing.js');
 const ExpressError = require('../utils/ExpressError.js');
 const methodOverride = require('method-override');
 const {listingSchema, reviewSchema} = require('../schema.js');
+const {isLoggedIn, saveredirectUrl} = require('../middleware.js');
 const validateListing = (req,res,next) =>{
     let {error} = listingSchema.validate(req.body);
     if(error){
@@ -34,8 +35,11 @@ router.get('/', async(request,response)=>{
  });
  
  //New Listing Route
- router.get("/new",(request,response)=>{
+ router.get("/new", isLoggedIn,(request,response)=>{
+    {
      response.render("listings/new.ejs")
+    }
+    
  });
  
  //show route
@@ -56,7 +60,7 @@ router.get('/', async(request,response)=>{
  });
  
  //create Route
- router.post("/",validateListing,wrapAsync(async (request,response,next)=>{
+ router.post("/",isLoggedIn,saveredirectUrl,validateListing,wrapAsync(async (request,response,next)=>{
    //  let {title,description,image,price,location,country} = request.body;
    const newlisting = new Listing(request.body.Listing);
    await newlisting.save();
@@ -66,7 +70,7 @@ router.get('/', async(request,response)=>{
  ));
  
  //edit route
- router.get("/:id/edit", async (request, response) => {
+ router.get("/:id/edit", isLoggedIn,saveredirectUrl,async (request, response) => {
      let { id } = request.params;
      try {
          const listing = await Listing.findById(id);
@@ -83,7 +87,7 @@ router.get('/', async(request,response)=>{
  });
  
  //Update Route
- router.put("/:id", validateListing ,async (req,res)=>{
+ router.put("/:id",isLoggedIn,saveredirectUrl,validateListing ,async (req,res)=>{
      let {id} = req.params; 
      const listing = await Listing.findByIdAndUpdate(id,{...req.body.Listing});
      res.redirect(`/listings/${id}`);
@@ -103,7 +107,7 @@ router.get('/', async(request,response)=>{
  );
  
  //delete review Route
- router.delete("/:id/reviews/:reviewid", wrapAsync(async (req, res, next) => {
+ router.delete("/:id/reviews/:reviewid",isLoggedIn,saveredirectUrl,wrapAsync(async (req, res, next) => {
      const { id, reviewid } = req.params; // Use 'reviewid' to match the route parameter
  
      // Find the listing by ID and remove the review reference
