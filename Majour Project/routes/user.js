@@ -33,7 +33,7 @@ router.get("/login",(req,res)=>{
 });
 
 router.post("/login",saveredirectUrl,passport.authenticate("local",{failureRedirect:'/login',failureFlash: true}),async (req,res)=>{
-    req.flash("success","You are successfully Logged in!")
+    req.flash("success","You are successfully Logged in!");
     res.redirect(res.locals.redirectUrl);
 });
 

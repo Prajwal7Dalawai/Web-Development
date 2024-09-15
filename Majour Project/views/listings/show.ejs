@@ -11,10 +11,12 @@
         <div class="col-8 offset-2">
     
     <h1><%= listing.title %></h1></div>
-    <div class="card col-6 offset-2">
+    <div class="card col-6 offset-2 mb-3">
         <img src="<%=listing.image%>" class="card-img-top show-img" alt="Listing Image">
         <div class="card-body">
-          <p class="card-text">
+          <p class="card-text">Owned by 
+            <i> <%= listing.owner.username  %> </i><br></p>
+            <p class="card-text">
             <ul>
                 <li><b><%= listing.title %></b></li>
                 <li>  <b><%= listing.description %></b> </li>
@@ -23,14 +25,17 @@
                 <li> <b> <%= listing.country %></b> </li>
             </ul></p>
         </div>
-      </div>
+      </div><br>
 
+      <% if(currentUser && listing.owner._id.equals(currentUser)){ %>
 </div><br>
 <div class="btns offset-2">
 <a href="/listings/<%= listing._id%>/edit" ><button class="btn btn-dark ">Edit This listing</button></a>
 <form action="/listings/<%= listing._id %>?_method=DELETE" method="post"><button class="btn btn-dark" type="submit">Delete This Listing</button></form>
 </div>
-<br><hr><br>
+<% } %>
+<br><br><hr><br>
+<% if(currentUser){ %>
 <div class="col-8 offset-2 mb-3">
     <h2>Leave a Review</h2>
     <form action="/listings/<%=listing._id %>/reviews" method="post" class="needs-validation form-label" novalidate>
@@ -45,12 +50,13 @@
             <button class="btn btn-outline-dark " type="submit">Submit</button>
     </form>
     <br><hr><br>
+    <% } %>
     <h2>All Reviews</h2><br>
     <div class="row">
         <% for (let rev of listing.reviews) { %> 
             <div class="card col-5 ms-3 mb-3" style="width: 18rem;">
                 <div class="card-body">
-                  <h5 class="card-title">John Doe</h5>
+                  <h5 class="card-title"><%= rev.author.username %> </h5>
                   <h6 class="card-subtitle mb-2 text-body-secondary"><%= rev.createdAt.toLocaleString('default', { month: 'short' }) %> <%= rev.createdAt.getFullYear()%> </h6>
                   <p class="card-text"><%= rev.Comment %></p>
                   <p><strong>Ratings: <%= rev.rating %>stars</strong></p>

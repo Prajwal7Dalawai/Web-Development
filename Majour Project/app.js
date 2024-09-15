@@ -7,9 +7,7 @@ const mongo_url = "mongodb://127.0.0.1:27017/wanderlust";
 const Listing = require('./models/listing.js');
 const path = require('path');
 const ejsMate = require('ejs-mate');
-const wrapAsync = require('./utils/WrapAsync.js');
 const ExpressError = require('./utils/ExpressError.js');
-const {listingSchema, reviewSchema} = require('./schema.js');
 const Reviews = require('./models/reviews.js');
 const listingsRouter = require('./routes/listing.js');
 const session = require('express-session');
@@ -49,6 +47,12 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname,"/public")));
 app.use('/listings',listingsRouter);
 app.use("/",userRouter)
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    req.flash("error", err.message || "Something went wrong!");
+    res.redirect("/listings");
+    next();
+});
 
 // // Utility Middleware logger
 // app.use((req,res,next)=>{
