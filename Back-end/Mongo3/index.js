@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const Chat = require('./models/chats.js');
 const methodOverride = require("method-override");
+const ExpressError = require('./expressErrors.js');
 
 app.set("view engine","ejs");
 app.set("vies",path.join(__dirname,"views"));
@@ -14,6 +15,12 @@ app.use(methodOverride("_method"));
 
 main().then((res)=>{console.log("Connection Successfull")})
 .catch((err)=>console.log(err));
+
+app.use((err,req,res,next)=>{
+    let {status=500,message="Some Errror Occured"} = err;
+    res.status(status).send(message);
+    next();
+});
 
 async function main(){
     await mongoose.connect('mongodb://127.0.0.1:27017/whatsapp');
@@ -45,6 +52,7 @@ app.get("/chats", async (req,res)=>{
 });
 
 app.get("/chats/new",(req,res)=>{
+    throw new ExpressError(404,"Page not found");
     res.render("view.ejs");
 });
 
@@ -82,3 +90,14 @@ app.delete("/chats/:id",async (req,res)=>{
     res.redirect("/chats");
     console.log(deletedChat);
 });
+
+//show route
+app.get("/chats/:id",async (req,res,next)=>{
+    let {id} = req.params;
+    let chat = await Chat.findById(id);
+    if(!chat){
+        next( new ExpressError(404,"Chat not Found"));
+    }
+    res.render("edit.ejs",{chat});
+    console.log(chat);
+})
