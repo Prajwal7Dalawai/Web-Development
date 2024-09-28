@@ -10,8 +10,10 @@ const listingSchema = new schema({
     },
     description: String,
     image: {
-        type: String,
-        set: (v) => v === "" ? "https://unsplash.com/photos/a-lighthouse-on-top-of-a-rocky-cliff-UGjaxpQnz8M" :  String(v)
+        url: String,
+        filename: String,
+        // type: String,
+        // set: (v) => v === "" ? "https://unsplash.com/photos/a-lighthouse-on-top-of-a-rocky-cliff-UGjaxpQnz8M" :  String(v)
     },
     price: Number,
     location: String,

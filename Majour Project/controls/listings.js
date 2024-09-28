@@ -1,4 +1,5 @@
 const Listing = require('../models/listing');
+const Reviews = require('../models/reviews');
 
 module.exports.index = async(request,response)=>{
     const allListings = await Listing.find({});
@@ -38,8 +39,12 @@ module.exports.showListing = async (request,response,next)=>{
 
 module.exports.createListing = async (request,response,next)=>{
     //  let {title,description,image,price,location,country} = request.body;
+    let url = request.file.path;
+    let filename = request.file.filename;
+    console.log(url,"...",filename);
     const newlisting = new Listing(request.body.Listing);
     newlisting.owner = request.user._id;
+    newlisting.image = {url,filename};
     await newlisting.save();
     request.flash("success","New Listing Created");
     response.redirect("/listings");
@@ -83,3 +88,27 @@ module.exports.desytroyListing = async (req, res, next) => {
         next(error); // Passes errors to the error-handling middleware
     }
 };
+
+module.exports.destroyListingReview = async (req, res, next) => {
+    let {id, reviewid} = req.params; // Use 'reviewid' to match the route parameter
+ 
+     // Find the listing by ID and remove the review reference
+     let listing = await Listing.findByIdAndUpdate(id, { $pull: { reviews: reviewid } });
+ 
+     // Delete the actual review document from the Reviews collection
+     let review = await Reviews.findByIdAndDelete(reviewid);
+ 
+     res.redirect(`/listings/${id}`);
+ };
+
+ module.exports.createReview = async (req,res)=>{
+    let listing = await  Listing.findById(req.params.id);
+    let newReview = new Reviews(req.body.reviews);
+    newReview.author = req.user._id;
+    console.log(newReview);
+    listing.reviews.push(newReview);
+    await newReview.save();
+    await listing.save();
+    console.log("new Review saved");
+    res.redirect(`/listings/${listing._id}`);
+  }

@@ -7,7 +7,11 @@ const methodOverride = require('method-override');
 const {listingSchema, reviewSchema} = require('../schema.js');
 const {isLoggedIn, saveredirectUrl, isOwner, validateListing, validateReview, isReviewAuthor} = require('../middleware.js');
 const Reviews = require('../models/reviews.js');
-const listingController = require('../controls/listings.js')
+const listingController = require('../controls/listings.js');
+const multer  = require('multer');
+const {storage} = require('../cloudConfig.js')
+const upload = multer({ storage });
+
 
 
 router.get('/', wrapAsync(listingController.index));
@@ -19,7 +23,7 @@ router.get('/', wrapAsync(listingController.index));
  router.get('/:id',wrapAsync(listingController.showListing));
  
  //create Route
- router.post("/",isLoggedIn,saveredirectUrl,validateListing,wrapAsync(listingController.createListing));
+router.post("/",isLoggedIn,saveredirectUrl, upload.single('Listing[image]'),validateListing, wrapAsync(listingController.createListing));
  
  //edit route
  router.get("/:id/edit", isLoggedIn,saveredirectUrl, listingController.renderEditListing);
@@ -29,31 +33,10 @@ router.get('/', wrapAsync(listingController.index));
  
  //Reviews route
  
- router.post("/:id/reviews",validateReview,isLoggedIn,wrapAsync(async (req,res)=>{
-   let listing = await  Listing.findById(req.params.id);
-   let newReview = new Reviews(req.body.reviews);
-   newReview.author = req.user._id;
-   console.log(newReview);
-   listing.reviews.push(newReview);
-   await newReview.save();
-   await listing.save();
-   console.log("new Review saved");
-   res.redirect(`/listings/${listing._id}`);
- })
- );
+ router.post("/:id/reviews",validateReview,isLoggedIn,wrapAsync(listingController.createReview));
  
  //delete review Route
- router.delete("/:id/reviews/:reviewid",isLoggedIn,saveredirectUrl,isReviewAuthor,wrapAsync(async (req, res, next) => {
-    let {id, reviewid} = req.params; // Use 'reviewid' to match the route parameter
- 
-     // Find the listing by ID and remove the review reference
-     let listing = await Listing.findByIdAndUpdate(id, { $pull: { reviews: reviewid } });
- 
-     // Delete the actual review document from the Reviews collection
-     let review = await Reviews.findByIdAndDelete(reviewid);
- 
-     res.redirect(`/listings/${id}`);
- }));
+ router.delete("/:id/reviews/:reviewid",isLoggedIn,saveredirectUrl,isReviewAuthor,wrapAsync(listingController.destroyListingReview));
  
  //delete route
  router.delete("/:id", isLoggedIn, isOwner, listingController.desytroyListing);

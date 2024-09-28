@@ -12,7 +12,7 @@
     
     <h1><%= listing.title %></h1></div>
     <div class="card col-6 offset-2 mb-3">
-        <img src="<%=listing.image%>" class="card-img-top show-img" alt="Listing Image">
+        <img src="<%=listing.image.url%>" class="card-img-top show-img" alt="Listing Image">
         <div class="card-body">
           <p class="card-text">Owned by 
             <i> <%= listing.owner.username  %> </i><br></p>
@@ -36,14 +36,23 @@
 <% } %>
 <br><br><hr><br>
 <% if(currentUser){ %>
-<div class="col-8 offset-2 mb-3">
+<div class="col-8 offset-2 mb-3 mt-3">
     <h2>Leave a Review</h2>
     <form action="/listings/<%=listing._id %>/reviews" method="post" class="needs-validation form-label" novalidate>
-        <div>
-            <label for="rating">Rating</label>
-            <input type="range" min="1" max="5" step="0.1" id="rating", name="reviews[rating]" class="form-range" required>
-      
-        </div>
+  <fieldset class="starability-slot">
+    <legend>First rating:</legend>
+    <input type="radio" id="no-rate" class="input-no-rate" name="reviews[rating]" value="0" checked aria-label="No rating." />
+    <input type="radio" id="second-rate1" name="reviews[rating]" value="1" />
+    <label for="second-rate1" title="Terrible">1 star</label>
+    <input type="radio" id="second-rate2" name="reviews[rating]" value="2" />
+    <label for="second-rate2" title="Not good">2 stars</label>
+    <input type="radio" id="second-rate3" name="reviews[rating]" value="3" />
+    <label for="second-rate3" title="Average">3 stars</label>
+    <input type="radio" id="second-rate4" name="reviews[rating]" value="4" />
+    <label for="second-rate4" title="Very good">4 stars</label>
+    <input type="radio" id="second-rate5" name="reviews[rating]" value="5" />
+    <label for="second-rate5" title="Amazing">5 stars</label>
+  </fieldset>
         <label for="comment" >Comment</label>
             <textarea name="reviews[Comment]" id="comment" cols="30", rows="10" class="form-control" required></textarea><br>
             
@@ -58,8 +67,8 @@
                 <div class="card-body">
                   <h5 class="card-title"><%= rev.author.username %> </h5>
                   <h6 class="card-subtitle mb-2 text-body-secondary"><%= rev.createdAt.toLocaleString('default', { month: 'short' }) %> <%= rev.createdAt.getFullYear()%> </h6>
+                  <p class="starability-result card-text" data-rating="<%= rev.rating %>"> Rated: 3 stars</p>
                   <p class="card-text"><%= rev.Comment %></p>
-                  <p><strong>Ratings: <%= rev.rating %>stars</strong></p>
                   <form action="/listings/<%= listing._id%>/reviews/<%=rev._id%>?_method=DELETE" method="post" >
                     <button class="btn btn-sm btn-dark">Delete</button>
                   </form>
