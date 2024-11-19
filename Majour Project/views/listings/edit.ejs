@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Listing</title>
+    <title>Edit Listing</title>
 </head>
 <body>
     <div class="row">
         <div class="col-8 offset-2">
     <h1>Edit Listing</h1>
-    <form action="/listings/<%= listing._id %>?_method=PUT" method="post" class="needs-validation" novalidate>
+    <form action="/listings/<%= listing._id %>?_method=PUT" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
         <div class="mb-3">
         <label for="title" class="form-label">Add a catchy title</label>
         <input type="text" name="Listing[title]" value="<%= listing.title %>" required class="form-control"> <div class="valid-feedback">
@@ -29,8 +29,9 @@
                 Please Add Description!
               </div><br> </div>
             <div class="mb-3">
-                <label for="image" class="form-label">Enter Image URL</label>
-                <input type="text" name="Listing[image]" value="<%= listing.image %>" required class="form-control">
+              <img src="<%= newUrl %>" class="mb-3" height="150px" width="150px">Current Image<br>
+                <label for="image" class="form-label">Choose Image file</label>
+                <input type="file" name="Listing[image]" class="form-control">
                 <div class="valid-feedback">
                     Looks good!
                   </div>

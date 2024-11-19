@@ -1,4 +1,6 @@
 const Joi = require('joi');
+const Listing = require('./models/listing.js');
+const reviews = require('./models/reviews.js');
 
 const listingSchema = Joi.object({
     Listing: Joi.object({
@@ -7,7 +9,10 @@ const listingSchema = Joi.object({
         location: Joi.string().required(),
         country: Joi.string().required(),
         price: Joi.number().required().min(0),
-        image: Joi.string().allow("", null)
+        image:{
+            url:Joi.string().allow("", null),
+            filename: Joi.string().allow("", null)
+        } 
     }).required(),
 });
 
