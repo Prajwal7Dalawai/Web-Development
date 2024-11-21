@@ -83,9 +83,9 @@ app.listen(port,()=>{
     );
 });
 
-app.get("/",(req,res)=>{
-    res.send("Hi there, This is root page");
-});
+// app.get("/",(req,res)=>{
+//     res.send("Hi there, This is root page");
+// });
 
 // app.get("/demoUser",async (req,res)=>{
 //     let fakeUser = new User({
