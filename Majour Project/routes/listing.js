@@ -7,6 +7,7 @@ const multer = require('multer');
 const { storage } = require('../cloudConfig.js');
 const upload = multer({ storage });
 const methodOverride = require('method-override');
+const Listing = require('../models/listing.js');
 
 router.get('/', wrapAsync(listingController.index));
 

@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const app = express();
 const port = 8080;
-const mongo_url = "mongodb://127.0.0.1:27017/wanderlust";
+const mongo_url = process.env.Connection_String;
 const Listing = require('./models/listing.js');
 const path = require('path');
 const ejsMate = require('ejs-mate');
@@ -45,6 +45,7 @@ app.engine("ejs",ejsMate);
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded({extended:true}));
+app.use(express.json()); // Parses JSON bodies
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname,"/public")));
 app.use('/listings',listingsRouter);

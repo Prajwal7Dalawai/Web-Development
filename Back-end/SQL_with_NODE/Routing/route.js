@@ -20,7 +20,6 @@ const connection = sql.createConnection({
     database: 'delta_app'
 });
 
-
 app.listen(port,()=>{
     console.log(`Server listening to the port ${port}`);
 });
