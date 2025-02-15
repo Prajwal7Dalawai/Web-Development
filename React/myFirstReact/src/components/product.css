@@ -3,4 +3,7 @@
     border-radius: 24px;
     padding: 5px;
     margin-bottom: 5px;
+    margin-left: 15px;
+    width: max-content;
+    height: max-content;
 }
