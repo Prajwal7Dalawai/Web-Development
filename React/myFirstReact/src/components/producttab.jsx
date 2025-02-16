@@ -1,10 +1,11 @@
 import Product from "./product";
 
-function saySomething(){
+function saySomething(e){
     let l = document.querySelector('.ProductTab');
     let p = document.createElement('p');
     l.insertAdjacentElement('afterend',p);
     p.innerText = "Hey, I appeared beacuse you clicked something";
+    console.log(e);
 }
 
 function ProductTab() {
@@ -27,7 +28,7 @@ function ProductTab() {
             <div>
             <button onClick={saySomething}>Click me</button>
             <button onMouseEnter={saySomething}>Dont enter ur mouse here</button>
-            <button onDoubleClick={saySomething()}>Dont Double Click me</button><br/>
+            <button onDoubleClick={saySomething}>Dont Double Click me</button><br/>
             </div>
         </div>
     );

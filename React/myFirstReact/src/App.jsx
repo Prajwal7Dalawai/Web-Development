@@ -3,6 +3,7 @@ import "./App.css";
 // import Product from "./components/product.jsx";
  import ProductTab from "./components/producttab.jsx"; // Updated import
 // import Msgbox from "./components/msgbox.jsx";
+import Form from "./components/form.jsx";
 function Description() {
     return <p>This is description</p>;
 }
@@ -15,8 +16,9 @@ function App() {
         //     <ProductTab />
         // </>
         <>
-             <h2>Blockbuster Deals | Shop Now</h2>
-            <ProductTab />
+             {/* <h2>Blockbuster Deals | Shop Now</h2>
+            <ProductTab /> */}
+            <Form />
         </>
     );
 }

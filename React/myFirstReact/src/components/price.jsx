@@ -9,7 +9,7 @@ export default function Price({ oldPrice, newPrice }) {
         backgroundColor: "#e0c367",
         hieght: "50px",
         borderBottomLeftRadius: "10px",
-        borderBottomLeftRadius: "10px"
+        borderBottomRightRadius: "10px"
     };
     return (
         <div className="price" style={styles}>
